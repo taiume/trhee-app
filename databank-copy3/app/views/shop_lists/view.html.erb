@@ -1,0 +1,50 @@
+
+<h2><%= @shop_list.name %><h2>
+<p><%= Time.now.strftime("%Y/%-m/%-d") %>時点 実績<p>
+
+<div class="row col-xs-11 col-sm-11 col-md-11">
+
+<!-- <table> -->
+<table border="1">
+<thead>
+<tr>
+
+<% culumn = Performance.column_names %>
+<% culumn_names = Performance.column_names %>
+<%  list = ['id','shop_list_id','created_at','updated_at'] %>
+<%  culumn_names.delete_if do |str| %>
+<%  list.include?(str) %>
+<%  end %>
+
+
+<% culumn.each do |culumn| %>
+
+<th><%= culumn %></th>
+<% end %>
+
+
+</tr>
+</thead>
+
+<!-- <tbody> -->
+  <tr>
+<% @pf.each do |pf| %>
+
+  <% value = pf.attributes.values %>
+  <% a = 0 %>
+    <% value.each do |value| %>
+
+      <% unless a == 0 || a == 2 || a == 5 || a == 6 %>
+        <td><%= value %></td>
+      <% end %>
+
+      <% a +=1 %>
+    <% end %>
+  </tr>
+<% end %>
+
+<!-- </tbody> -->
+</table>
+
+</div>
+

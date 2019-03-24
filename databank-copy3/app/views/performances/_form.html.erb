@@ -1,0 +1,15 @@
+<% if @pf.errors.any? %>
+<div id="error_explanation" class ="form-control:focus alert alert-danger">
+
+
+<h3><%= @pf.errors.count %>件の入力エラーがあります。</h3>
+
+   <ul>
+  <% @pf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+</div>
+<a href="javascript:history.back()">[戻る]</a>
+<% end %>
+

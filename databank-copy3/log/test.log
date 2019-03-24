@@ -1,0 +1,30 @@
+  [1m[36m (18.8ms)[0m  [1mDROP DATABASE IF EXISTS `databank_test`[0m
+  [1m[35m (2.7ms)[0m  CREATE DATABASE `databank_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (27.2ms)[0m  [1mCREATE TABLE `performances` (`id` int(11) auto_increment PRIMARY KEY, `day` date, `shop_list_id` int(11), `wimax` int(11), `uqm` int(11), `created_at` datetime, `updated_at` datetime, `ym_wifi` int(11), `sb_net` int(11), `sb_wifi` int(11), `au_net` int(11), `au_wifi` int(11), `do_net` int(11), `ym_phone` int(11), `sb_phone` int(11), `au_phone` int(11), `do_phone` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (28.2ms)[0m  CREATE TABLE `shop_lists` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (24.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (31.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20170909053152')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20170906032433')[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20170906035007')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20170906073521')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `performances`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `performances` (`created_at`, `updated_at`, `id`) VALUES ('2017-09-09 07:19:25', '2017-09-09 07:19:25', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `performances` (`created_at`, `updated_at`, `id`) VALUES ('2017-09-09 07:19:25', '2017-09-09 07:19:25', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `shop_lists`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `shop_lists` (`id`) VALUES (980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `shop_lists` (`id`) VALUES (298486374)
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------
+NoticeTest: test_sendmail_confirm
+---------------------------------
+
+Notice#sendmail_confirm: processed outbound mail in 0.9ms
+  [1m[35m (0.2ms)[0m  ROLLBACK

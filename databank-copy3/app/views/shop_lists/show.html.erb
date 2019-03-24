@@ -1,0 +1,32 @@
+<h1><%= @shop_list.name %>実績確認</h1>
+
+<div class:="row">
+
+<div class="col-xs-12 col-sm-6 col-md-8">
+   <p><%= link_to "今月実績-CSV出力", csvprint_shop_list_path(format: :csv), class: "btn btn-primary btn-sm"%></p>
+   <p><%= link_to "前月実績-CSV出力", csvprint1_shop_list_path(format: :csv), class: "btn btn-primary btn-sm"%></p>
+   <p><%= link_to "前々月実績-CSV出力", csvprint2_shop_list_path(format: :csv), class: "btn btn-primary btn-sm"%></p>
+   <p><%= link_to "HTML実績表示", view_shop_list_path, class: "btn btn-default btn-sm"%></p>
+</div>
+
+
+<div class="col-xs-12 col-sm-6 col-md-4">
+<h4><%=Time.now.strftime("%Y/%-m/%-d") %>時点実績</h4>
+<li>WiMAX実績:<%= @performances %>件</li>
+<li>UQmobile実績:<%= @performances2 %>件</li>
+</div>
+
+</div>
+
+
+
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-6">
+<p>■スマートフォン店舗内シェア■<p>
+<%= pie_chart @sp_share %>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<p>■インターネット店舗内シェア■<p>
+<%= pie_chart @net_share %>
+</div>
+</div>

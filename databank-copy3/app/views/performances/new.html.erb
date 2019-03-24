@@ -1,0 +1,40 @@
+
+
+<div align="center">
+<p><%= @shop_list.name %>~新規実績登録~</p>
+</div>
+
+
+
+
+<div class="row form">
+
+<div class = "col-xs-8 col-md-6">
+
+    <%= form_for @performance,url:{action: "create"} do |f| %>
+
+<ul>
+    <div class="form-group"><%= f.date_field :day, placeholder: "日付", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :wimax, placeholder: "wimax実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :uqm, placeholder: "UQM実績", class: "form-control" %></div>
+
+    <div class="form-group"><%= f.number_field :ym_wifi, placeholder: "YMデータ実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :sb_net, placeholder: "SB光実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :sb_wifi, placeholder: "SBAir実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :au_net, placeholder: "au光実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :au_wifi, placeholder: "auデータ実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :do_net, placeholder: "docomo光実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :ym_phone, placeholder: "ymスマホ実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :sb_phone, placeholder: "SBスマホ実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :au_phone, placeholder: "auスマホ実績", class: "form-control" %></div>
+    <div class="form-group"><%= f.number_field :do_phone, placeholder: "docomoスマホ実績", class: "form-control" %></div>
+</ul>
+
+      <div align="right"><%= f.submit "送信", class: "btn btn-primary withripple" %></div>
+
+    <% end %>
+
+</div>
+
+</div>
+

@@ -1,0 +1,34 @@
+<h1>ランキングメール配信しました。</h1>
+
+<% a= 1 %>
+
+<h2> WiMAX実績 <h2>
+<% @ranking_net_keys.zip(@ranking_net_values).each do |ranking_net_key,ranking_net_value| %>
+
+
+<div>
+<%= a %> 位
+<%= ShopList.find(ranking_net_key).name %>
+<%= ranking_net_value %>件
+<% a +=1 %>
+</div>
+
+<% end %>
+
+<% b = 1 %>
+
+<h2> WiMAX実績 <h2>
+<% @ranking_phone_keys.zip(@ranking_phone_values).each do |ranking_phone_key,ranking_phone_value| %>
+
+
+<div>
+<%= b %> 位
+<%= ShopList.find(ranking_phone_key).name %>
+<%= ranking_phone_value %>件
+<% a +=1 %>
+</div>
+
+<% end %>
+
+
+

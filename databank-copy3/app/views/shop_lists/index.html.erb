@@ -1,0 +1,20 @@
+
+
+<h3  align="center">メニュー選択</h3>
+
+<div class="row" >
+<div class="col-xs-12 col-sm-12 col-md-12", align="center">
+<!-- <div class="contents" > -->
+<% @shop_lists.each do |shop_list| %>
+
+<h2>【<%= shop_list.name %>】</h2>
+
+<h2><%= link_to '新規実績登録', new_shop_list_performance_path(shop_list.id), class: 'btn btn-default list-style:none' %><%= link_to '実績確認', shop_list_path(shop_list.id), class: 'btn btn-default list-style:none' %></h2>
+
+
+<% end %>
+<!-- </div> -->
+</div>
+
+</div>
+
